@@ -74,7 +74,7 @@ python evalution.py --test_path [Path of data test folder]
 └───tulip
 
 
-# How to predict image
+# Demo predict image
 ```
 cd ./FLOWERCLASSIFICATION
 pip install requirement.txt
