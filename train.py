@@ -76,14 +76,7 @@ transform = transforms.Compose([
     transforms.ToTensor(),
     transforms.Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225]),
 ])     
-
-# transform = transforms.Compose([
-#     transforms.Resize(224),
-#     transforms.ToTensor(),
-#     transforms.Normalize([0.485, 0.456, 0.406], [0.229, 0.224, 0.225]),
-# ])     
-
-
+ 
 dataset = FlowerDataset(data, args.dataset_path, transform)
 
 train_loader = torch.utils.data.DataLoader(dataset, batch_size=args.batch_size, sampler=train_sampler)
@@ -91,21 +84,15 @@ train_loader = torch.utils.data.DataLoader(dataset, batch_size=args.batch_size, 
 valid_loader = torch.utils.data.DataLoader(dataset, batch_size=args.batch_size, sampler=valid_sampler)
 
 model = models.resnext101_32x8d(pretrained=True)
-# model = models.resnext50_32x4d(pretrained=True)
 model.fc = nn.Linear(2048, len(classes), bias=True)
 
 
-# model = EfficientNet.from_name('efficientnet-b0')
-# model._fc = nn.Linear(1280, len(classes))
 print(model)
 model = model.to(device)
-
-
 param_optimizer = model.parameters()
 optimizer = torch.optim.Adam(param_optimizer, lr=args.lr)
-# optimizer = torch.optim.SGD(model.parameters(), lr=0.001, momentum=0.9)
 loss_fn = nn.CrossEntropyLoss().to(device)
-# train(device=device, model=model, optimizer=optimizer, train_dataloader=train_loader, loss_fn=loss_fn, 
-#         valid_dataloader=valid_loader, num_epochs=args.num_epochs, 
-#         file_path=r"C:\Users\admin\Documents\Python\FlowerClassification")
+train(device=device, model=model, optimizer=optimizer, train_dataloader=train_loader, loss_fn=loss_fn, 
+        valid_dataloader=valid_loader, num_epochs=args.num_epochs, 
+        file_path=r"C:\Users\admin\Documents\Python\FlowerClassification")
 
