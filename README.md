@@ -75,6 +75,7 @@ python evalution.py --test_path [Path of data test folder]
 
 
 # How to predict image
+```
 cd ./FLOWERCLASSIFICATION
 pip install requirement.txt
 python predict.py --model_path [Path of the model after training] --image_path [Path of image you want to predict]
