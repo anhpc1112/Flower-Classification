@@ -2,7 +2,7 @@
 Flower Classification Using Resnext_101_32x8d pretrained model
 
 # Overview
-The Dataset includes 1000 images and they belong to 6 classes which are:
+The Dataset includes 5198 images and they belong to 6 classes which are:
 - astilbe
 - bellflower
 - black-eyed susan
