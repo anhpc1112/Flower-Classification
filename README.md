@@ -25,7 +25,7 @@ The Dataset is divided by the ratio of 85% for the training set and 15% for the 
 # How to train model
 ```
 cd ./FLOWERCLASSIFICATION
-pip install requirement.txt
+pip install -r requirements.txt
 python train.py --dataset_path [Path of dataset folder] --valid_split [validation dataset split ratio] --batch_size [batch_size] --lr [learning rate] --num_epochs [number of epochs]
 ```
 ### Description of parameters
@@ -55,7 +55,7 @@ python train.py --dataset_path [Path of dataset folder] --valid_split [validatio
 # How to estimate the accuracy of the model
 ```
 cd ./FLOWERCLASSIFICATION
-pip install requirement.txt
+pip install -r requirements.txt
 python evalution.py --test_path [Path of data test folder]
 ```
 ### Structure of data test folder:
@@ -77,6 +77,6 @@ python evalution.py --test_path [Path of data test folder]
 # Demo predict image
 ```
 cd ./FLOWERCLASSIFICATION
-pip install requirement.txt
+pip install -r requirements.txt
 python predict.py --model_path [Path of the model after training] --image_path [Path of image you want to predict]
 ```
